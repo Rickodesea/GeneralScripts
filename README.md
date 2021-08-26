@@ -1,5 +1,20 @@
-# Scripts for General Use
-Python 3
+# Python Scripts for General Use
+Python 3 Scripts for General Use.
+
+Major scripts are found in the [MajorScripts](MajorScripts) folder.  They are kept in their own folder.
+Major scripts are the most powerful scripts.
+Examples of major scripts are:
+
+* [MajorScripts/BinaryToCArray](MajorScripts/BinaryToCArray)
+* [MajorScripts/CenterText](MajorScripts/CenterText)
+* [MajorScripts/TextToCComment](MajorScripts/TextToCComment)
+* [MajorScripts/TextToCString](MajorScripts/TextToCString)
+
+Minor scripts are kept in the [MinorScripts](MinorScripts) folder.  They are small and solve very small problems.
+
+Both major and minor scripts are available for use to solve a wide range of problems.
+
+Call [run.sh](run.sh) to run all the tests.
 
 ## License
 This project is licensed under the zlib license - see the [LICENSE](LICENSE) file for details.
@@ -8,19 +23,17 @@ This project is licensed under the zlib license - see the [LICENSE](LICENSE) fil
 ## Version
 The current version of this project can be seen on the [VERSION](VERSION.md) file.
 
-## Team
-* Innovative Director:		Alrick Grandison
+## Project Managers
+* Innovative Director:		Alrick Grandison, Algodal™
+
+## Authors
+See [AUTHORS](AUTHORS) for full list of contributors.
+
+## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute.
+
+## Coding Style
+See [CODINGSTYLE.md](CODINGSYTLE.md) for coding style for this project.
 
 
-## Algodal™
-[![www.algodal.com](https://i.pinimg.com/originals/94/8e/0b/948e0b76fe239d745ff08d2481b66a4c.png)](https://www.algodal.com)
-<br/>
-looking towards the creator
-<br/><br/><br/>
 
-<a href="https://www.facebook.com/algodalinnovations/"> <img src="https://i.pinimg.com/originals/27/8c/b4/278cb4f35386c4ce87bbc30504c55225.png" width="24" height="24"> </a>
-<a href="http://projects-algodal.blogspot.com/"> <img src="https://i.pinimg.com/originals/a2/17/81/a217812576868675ff43d236a84cdde1.png" width="24" height="24"> </a>
-<a href="https://github.com/Rickodesea"> <img src="https://i.pinimg.com/originals/d3/b7/39/d3b7395399c3cf77213ed21db8dad572.png" width="24" height="24"> </a>
-<br/>
-contact@algodal.com
-<br/><br/>

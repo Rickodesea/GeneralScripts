@@ -1,3 +1,8 @@
+'''
+This Script was designed to be depended on by other script but this model has been scrapped.
+So far only "RegEx_NoCase.py" depends on it.
+'''
+
 import argparse
 
 INPUT_FILE = 'input.txt'
