@@ -1,8 +1,6 @@
 # TextToCComment.py
 This converts a text into a C comment.
 
-Requires the input text to be in a file.  The default file looked for is 'input.txt'.
-
 [input]
 ```text
 Let's convert this text into a C comment.
@@ -12,7 +10,7 @@ We can even center the text.
 
 [console]
 ```bash
-python TextToCComment.py
+python3 TextToCComment.py
 ```
 
 [output]

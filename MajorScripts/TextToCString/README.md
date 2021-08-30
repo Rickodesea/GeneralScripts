@@ -2,8 +2,6 @@
 This script converts any text into a 'C string literal'.  This string can be assigned to
 any 'C code variable'.
 
-Requires the input text to be in a file.  The default file looked for is 'input.txt'
-
 For example:
 [input]
 ```text
@@ -16,7 +14,7 @@ List:\t"Mountain",\t"Sky"
 ```
 [console]
 ```bash
-python TextToCString.py
+python3 TextToCString.py
 ```
 
 [output]

@@ -1,6 +1,11 @@
-# 0.2.0
+# 0.3.0
+Additional scripts and edits.
 
 ## History
+
+### 0.3.0
+* Created CEnumToString
+* Made edits to various README
 
 ### 0.2.0
 * Merge the product with [Older Python project](https://github.com/Rickodesea/PythonScripts)

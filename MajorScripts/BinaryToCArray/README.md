@@ -1,11 +1,9 @@
 # BinaryToCArray.py
 This script converts any binary into a 'C array'.  This array can be accessed normally in 'C code'.
 
-Requires the input binary to be in a file.  The default file looked for is 'input.txt'.
-
 [input]
 ```text
-This is a binary file.  A binary file can contain any data.  This includes text, image, sound and so on.  
+The input is expected to be the name of a binary file.  A binary file can contain any data.  This includes text, image, sound and so on.  
 Binary can be represented in a C program as an array.  This script converts any binary into an array.
 ```
 
