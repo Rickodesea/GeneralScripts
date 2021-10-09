@@ -1,7 +1,11 @@
-# 0.3.0
+# 0.3.1
 Additional scripts and edits.
 
 ## History
+
+### 0.3.1
+* Added some minor scripts
+* Edited one major script
 
 ### 0.3.0
 * Created CEnumToString
