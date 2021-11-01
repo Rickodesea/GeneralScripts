@@ -76,6 +76,14 @@ def ApplySingle(Text, Bool):
 			newList.append('"' + line + '\\n' + '"')
 	return CreateStringFromStringList(newList, '\n')
 
+def ApplyPrint(Text, Bool):
+	lines = Text.splitlines()
+	newList = []
+	if Bool:
+		for line in lines:
+			newList.append('printf("' + line + '\\n' + '");')
+	return CreateStringFromStringList(newList, '\n')
+
 def ApplyComma(Text, Bool):
 	if Bool:
 		lines = Text.splitlines()
@@ -107,13 +115,17 @@ def RunConsole():
 	arg.add_argument('-q', '--quote', default=True, choices=[True, False], help='Protect embedded quote \'\"\'. Default:True', type=str2bool)
 	arg.add_argument('-e', '--escape', default=False, choices=[True, False], help='Protect embedded escape \'\\\'. Default:False', type=str2bool)
 	arg.add_argument('-c', '--comma', action='store_true', help='Make each line comma separated. Default:False.')
+	arg.add_argument('-p', '--print', action='store_true', help='Make each line printf separated. Default:False.')
 	cmd = arg.parse_args()
 	text = Read(cmd.input)
 	text = ApplyFormat(text, cmd.format)
 	text = ApplyEscape(text, cmd.escape) #Must be called before Quote to avoid corruption.
 	text = ApplyQuote(text, cmd.quote)
-	text = ApplySingle(text, cmd.single) #This adds the wrapper quotes, so must always be called last.
-	text = ApplyComma(text, cmd.comma)
+	if cmd.print:
+		text = ApplyPrint(text, cmd.print)
+	else:
+		text = ApplySingle(text, cmd.single) #This adds the wrapper quotes, so must always be called last.
+		text = ApplyComma(text, cmd.comma)
 	Write(text, cmd.output)
 
 if __name__ == '__main__':

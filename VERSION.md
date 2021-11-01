@@ -1,7 +1,10 @@
-# 0.3.1
-Additional scripts and edits.
+# 0.3.2
+Add additional features to some scripts.
 
 ## History
+
+### 0.3.2
+* Add additional features to some scripts.
 
 ### 0.3.1
 * Added some minor scripts
