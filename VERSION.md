@@ -1,7 +1,10 @@
-# 0.3.2
-Add additional features to some scripts.
+# 0.4.0
+Add additional features to CEnumToString script.
 
 ## History
+
+# 0.4.0
+Add additional features to CEnumToString script.
 
 ### 0.3.2
 * Add additional features to some scripts.

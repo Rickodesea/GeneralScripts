@@ -79,6 +79,13 @@ def getEnumValues(ast):
 						values.append(enum)
 	return values
 
+def GenName(cmd, name, string):
+	if cmd.name:
+		return cmd.name
+	if name: 
+		return f'{name}_{string}'
+	return string
+
 def GenerateString(cmd, listvalues):
 	for values in listvalues:
 		values['result'] = values['values'].copy()
@@ -112,7 +119,7 @@ def GenerateString(cmd, listvalues):
 			name = values['name']
 			vlist = values['result']
 			string = 'array'		
-			if name: string = f'{name}_{string}'
+			string = GenName(cmd, name, string)
 			string = f'const char * {string} [] = '+'{' + '\n'
 			for i, item in enumerate(vlist):
 				text = '\"' + item + '\"'
@@ -127,7 +134,7 @@ def GenerateString(cmd, listvalues):
 			vlist = values['result']
 			vkey = values['values']
 			string = 'line'		
-			if name: string = f'{name}_{string}'
+			string = GenName(cmd, name, string)
 			string = f'[{string}]' + '\n'
 			for i, item in enumerate(vlist):
 				text = '\"' + item + '\"'
@@ -138,9 +145,14 @@ def GenerateString(cmd, listvalues):
 			vlist = values['result']
 			vkey = values['values']
 			unnamed = '"--unnamed--"'
+			if cmd.unknown:
+				unnamed = f'"{cmd.unknown}"'
 			string = 'getidstring'		
-			if name: string = f'{name}_{string}'
-			string = f'const char * {string} ( unsigned int id ) '+'{\n\tswitch(id){\n'
+			string = GenName(cmd, name, string)
+			id_type = "unsigned int"
+			if cmd.id_type:
+				id_type = cmd.id_type
+			string = f'const char * {string} ( {id_type} id ) '+'{\n\tswitch(id){\n'
 			for i, item in enumerate(vlist):
 				text = '\"' + item + '\"'
 				string += f'\t\tcase {vkey[i]}: return {text};\n'
@@ -191,6 +203,9 @@ def RunConsole():
 	arg = ap.ArgumentParser(description='Converts C Enum to String.')
 	arg.add_argument('-i', '--input', help='File path to read text from. ')
 	arg.add_argument('-o', '--output', help='File path to write text to.')
+	arg.add_argument('-n', '--name', help='Name of function')
+	arg.add_argument('-u', '--unknown', help='Unknown value for function')
+	arg.add_argument('--id_type', help='Function ID Type')
 	arg.add_argument('-t', '--type', default=type_function, choices=TYPE_VALUES, help='output String type')
 	arg.add_argument('-e', '--eliminate', default='true', choices=['true', 'false'], help='eliminate common prefixes')
 	arg.add_argument('-l', '--lowercase', default='true', choices=['true', 'false'], help='use lowercase strings')

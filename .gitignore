@@ -6,6 +6,7 @@ dump/
 *.bak
 *.txt
 *.png
+MajorScripts/CEnumToString/input
 
 
 
